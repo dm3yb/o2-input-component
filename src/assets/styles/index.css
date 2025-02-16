@@ -1,6 +1,6 @@
 :root {
 	/* Fonts */
-	--font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+	--font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif; /* Need to provide "On Air Var" font from O2 team */
 	--font-letter-spc-label: 0.16px;
 
 	--font-size-label-m: 1rem /* 16px */;

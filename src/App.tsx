@@ -1,4 +1,3 @@
-import './assets/styles/app.css';
 import { BaseInput } from './components/ui/BaseInput';
 
 export default function App() {
