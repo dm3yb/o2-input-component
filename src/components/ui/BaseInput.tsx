@@ -1,7 +1,9 @@
+import type { HTMLInputTypeAttribute } from 'react';
+
 type Props = {
 	label: string;
 	name: string;
-	type: React.HTMLInputTypeAttribute | undefined;
+	type: HTMLInputTypeAttribute;
 	placeholder: string;
 	ariaLabel: string;
 	isOptional?: boolean;
