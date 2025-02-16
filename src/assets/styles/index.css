@@ -1,6 +1,7 @@
 :root {
 	/* Fonts */
-	--font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif; /* Need to provide "On Air Var" font from O2 team */
+	/* !!! Need to provide "On Air Var" font from O2 team */
+	--font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
 	--font-letter-spc-label: 0.16px;
 
 	--font-size-label-m: 1rem /* 16px */;
@@ -55,6 +56,7 @@
 body {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
+	background-color: var(--o2-color-surface-x-low);
 	color: var(--o2-color-content-on-neutral-xx-high);
 }
 
@@ -67,8 +69,61 @@ main {
 	min-height: 100vh;
 }
 
-.input-wrapper {
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.section-one {
+	padding: 2rem 0;
+}
+
+.base-input-wrapper > :nth-child(n + 2) {
+	margin-top: var(--dimension-xs);
+}
+
+.base-input-label-wrapper {
 	display: flex;
-	flex-direction: column;
-	place-items: center;
+	align-items: center;
+}
+
+.base-input-label.optional-label {
+	font-size: var(--font-size-label-s);
+	color: var(--o2-color-content-on-neutral-low);
+}
+
+.base-input-label-wrapper > :nth-child(n + 2) {
+	margin-left: var(--dimension-xs);
+}
+
+.base-input-label {
+	font-size: var(--font-size-label-m);
+	font-weight: var(--font-weight-label-m);
+	line-height: var(--font-line-height-label-m);
+	letter-spacing: var(--font-letter-spc-label-m);
+}
+
+.base-input {
+	width: 100%;
+	max-width: 25rem; /* 400px */
+	padding: var(--dimension-s) var(--dimension-m);
+	border: 1px solid var(--o2-color-surface-x-high);
+	border-radius: var(--dimension-radius-input);
+	font-size: var(--font-size-body-m);
+	line-height: var(--font-line-height-body-m);
+	transition: border-color 0.2s ease-in-out;
+}
+
+/* Uncomment this code if we need a `:hover` effect */
+/* .base-input:hover {
+	border-color: var(--o2-color-state-default-hover);
+} */
+
+.base-input:focus {
+	outline-color: var(--o2-color-state-default-focus);
+}
+
+.base-input::placeholder {
+	color: var(--o2-color-content-on-neutral-low);
 }
