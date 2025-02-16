@@ -80,7 +80,13 @@ main {
 	padding: 2rem 0;
 }
 
-.base-input-wrapper > :nth-child(n + 2) {
+.input-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.base-input-wrapper > :nth-child(n + 2),
+.input-group > :nth-child(n + 2) {
 	margin-top: var(--dimension-xs);
 }
 
@@ -116,6 +122,10 @@ main {
 	transition: border-color 0.2s ease-in-out;
 }
 
+.base-input.input-error {
+	border-color: var(--o2-color-surface-x-danger);
+}
+
 /* Uncomment this code if we need a `:hover` effect */
 /* .base-input:hover {
 	border-color: var(--o2-color-state-default-hover);
@@ -127,4 +137,21 @@ main {
 
 .base-input::placeholder {
 	color: var(--o2-color-content-on-neutral-low);
+}
+
+.button {
+	padding: var(--dimension-s) var(--dimension-m);
+	border: none;
+	border-radius: var(--dimension-radius-input);
+	font-size: var(--font-size-body-m);
+	font-weight: var(--font-weight-body-m);
+	line-height: var(--font-line-height-body-m);
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+	margin-top: var(--dimension-m);
+}
+
+.validation-error-message {
+	font-size: var(--font-size-label-s);
+	color: var(--o2-color-surface-x-danger);
 }

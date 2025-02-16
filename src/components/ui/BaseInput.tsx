@@ -1,4 +1,5 @@
 import type { HTMLInputTypeAttribute, InputHTMLAttributes } from 'react';
+import type { FieldError } from 'react-hook-form';
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
 	label: string;
@@ -7,6 +8,7 @@ type Props = InputHTMLAttributes<HTMLInputElement> & {
 	placeholder: string;
 	ariaLabel: string;
 	isOptional?: boolean;
+	errorState: FieldError | undefined;
 };
 
 export const BaseInput: React.FC<Props> = ({
@@ -16,8 +18,11 @@ export const BaseInput: React.FC<Props> = ({
 	placeholder,
 	ariaLabel,
 	isOptional = false,
+	errorState,
 	...rest
 }) => {
+	const errorClass = errorState ? 'input-error' : '';
+
 	return (
 		<div className='base-input-wrapper'>
 			<div className='base-input-label-wrapper'>
@@ -36,7 +41,7 @@ export const BaseInput: React.FC<Props> = ({
 				type={type}
 				placeholder={placeholder}
 				aria-label={ariaLabel}
-				className='base-input'
+				className={`base-input ${errorClass}`}
 				required={!isOptional}
 				{...rest}
 			/>
