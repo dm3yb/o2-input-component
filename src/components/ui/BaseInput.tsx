@@ -1,6 +1,6 @@
-import type { HTMLInputTypeAttribute } from 'react';
+import type { HTMLInputTypeAttribute, InputHTMLAttributes } from 'react';
 
-type Props = {
+type Props = InputHTMLAttributes<HTMLInputElement> & {
 	label: string;
 	name: string;
 	type: HTMLInputTypeAttribute;
@@ -16,6 +16,7 @@ export const BaseInput: React.FC<Props> = ({
 	placeholder,
 	ariaLabel,
 	isOptional = false,
+	...rest
 }) => {
 	return (
 		<div className='base-input-wrapper'>
@@ -36,6 +37,8 @@ export const BaseInput: React.FC<Props> = ({
 				placeholder={placeholder}
 				aria-label={ariaLabel}
 				className='base-input'
+				required={!isOptional}
+				{...rest}
 			/>
 		</div>
 	);
